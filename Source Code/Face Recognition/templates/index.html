@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System</title>
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
+
+</head>
+<body>
+        <h1></h1>
+ <div class="te">
+    <div class="buttons">
+        <button onclick="showPasswordPrompt()" style="margin-right: 20px;" class="button">Registration</button>
+        <a href="{{ url_for('attendance') }}" class="button">Take Attendance</a>
+        <br>
+        <button onclick="showHelpLine()" class="help-line-button">Help Line</button>
+</div>
+<script>
+    function showPasswordPrompt() {
+        const password = prompt('Enter the password:');
+        
+        // Replace 'your_password' with the actual password
+        if (password === '342531') {
+            window.location.href = '/registration';
+        } else {
+            alert('Incorrect password. Please try again.');
+        }
+    }
+
+    function showHelpLine() {
+        // You can customize the contact information here
+        const contactInfo = "please contact:  tejamannepuli2019@gmail.com";
+
+        alert(contactInfo);
+    }
+</script>
+ </div>
+      
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!-- templates/csv.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./static/csv.css">
+    <title>Attendance Data</title>
+</head>
+<body>
+    <h1>Attendance Data</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <button href="{{url_for('retake') }}" class="button">Take Attendance</button>
+    <br>
+    <a href="{{ url_for('download_attendance') }}" download="Attendance.csv">Download CSV</a>
+
+    <button onclick="window.location.href='{{ url_for('index') }}'" class="button">Back to Home</button>
+</body>
+</html>

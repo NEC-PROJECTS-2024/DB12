@@ -1,0 +1,14 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Matching Result</title>
+</head>
+<body>
+    <h1>Top Matched Images</h1>
+    {% for image_path, title in zip(image_paths, titles) %}
+        <img src="{{ image_path }}" alt="Matched Image" style="width: 200px;">
+        <p>{{ title }}</p>
+    {% endfor %}
+</body>
+</html>
